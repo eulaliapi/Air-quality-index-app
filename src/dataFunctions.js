@@ -44,7 +44,7 @@ export const getSearchedIndex = (e) => {
     showSpinner()
     
     //calls url: if res is ok it sends its data to getCoordsFromApi, else it displays the error
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${requestedCity}&limit=5&appid=${AQI_API}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${requestedCity}&limit=5&appid=${AQI_API}`;
     axios.get(url)
     .then( res => getCoordsFromApi(res.data))
     .catch(displayError)
@@ -81,7 +81,7 @@ const getAQI = (pollutionData) => {
     const lat = pollutionData.getLat();
     const lon = pollutionData.getLon();
 
-    const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${AQI_API}`;
+    const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${AQI_API}`;
 
     //gets the AQI Json or an error
     axios.get(url)
