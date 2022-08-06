@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+    <!--title-->
+    <nav class="navbar shadow-sm">
+        <div class="container-fluid justify-content-center">
+          <span class="navbar-brand mb-0 h1 text-light">Air Quality Index</span>
+        </div>
+    </nav>   
+    
+    <!--search bar -->
+    <nav class="navbar mt-3">
+        <div class="container-fluid">
+          <form class="d-flex mx-auto" role="search" id="search">
+            <input class="form-control me-2 border border-success bg-light" type="search" placeholder="Search" aria-label="Search" id="req-city">
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search text-white"></i></button>
+          </form>
+        </div>
+    </nav> 
+
+    <!-- alert -->
+    <div class="d-none justify-content-center mt-5 mx-5" id="alert">
+        <div class="alert alert-success border border-success" role="alert">
+        <a href="#" class="alert-link" id="user-pos">Click here</a> if you want to know the air quality index of your position, <br> else insert a city in the search bar.
+        </div>
+    </div>
+
+    <!-- spinner -->
+    <div class="d-none justify-content-center" id="spinner">
+        <div class="spinner-grow text-success mt-5 p-4" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!--error msg -->
+    <div class="d-none justify-content-center mt-5 mx-5" id="err-msg">
+        <div class="alert alert-warning border border-warning" role="alert">
+            Oops!<br>Looks like something went wrong.<br>Please try again.
+        </div>
+    </div>
+
+    <!--card-->
+    <div class="d-none justify-content-center mt-5 mx-5" id="card">
+        <div class="card  border border-success shadow bg-light" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item text-center p-3"><i class="bi bi-emoji-dizzy-fill text-danger fs-3" id="emoji"></i></li>
+            <li class="list-group-item text-success text-center">Air quality in <span class="fw-bold" id="city-name">  </span> is <span class="fw-bold" id="aqi-def"></span>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer class="container-fluid p-3 text-center text-success fixed-bottom">
+        <p>Created by <a class="text-success" target="_blank" href="https://eulaliapi.github.io/">Eulalia Pirone</a> <a target="_blank"
+                href="https://github.com/eulaliapi"><i class="fs-4 bi bi-github text-success"></i></a></p>
+    </footer>
+
+</body>
+    
+</html>
