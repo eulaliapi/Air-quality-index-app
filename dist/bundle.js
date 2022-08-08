@@ -2543,7 +2543,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pollution_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pollution.js */ "./src/Pollution.js");
 
 
- //api key, I know it should be hidden but I still need to figure out how to make it work with gitignore and webpack
+ //api key
 
 var aqiApi = "6aa562f78c0631a2b538a949824cb0e3";
 var pollutionData = new _Pollution_js__WEBPACK_IMPORTED_MODULE_2__.Pollution(); //starts geolocation
