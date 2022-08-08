@@ -1,24 +1,11 @@
-# Webpack starter
-webpack starter for me to reuse
+# Air Quality Index App
+This app has been created using the [Open Weather Map](https://openweathermap.org/) API [Air Pollution](https://openweathermap.org/api/air-pollution).
 
-Includes:
-<li>Axios</li>
-<li>Babel loader</li>
-<li>Bootstrap</li>
-<li>Bootstrap icons</li>
-<li>Dotenv</li>
-<li>HTMLWebpackPlugin</li>
-<li>Lodash</li>
-<li>Sass loader</li>
-<li>Source Maps</li>
-<li>WebpackDevServer</li>
+## How it works
 
-## Usage
-Run Dev Server (Port: 3000)
-npm run dev
-  
-## Build for production
-npm run build
+Its functionality is simple: the users have the opportunity to click the link displayed at the beginning to get the air quality index of their position, but they can also get the same information about a city which they can enter in the search bar.
+<br>
+The card will display an emoji which describes the AQI in a figurative way followed by a short text that describes in words what it represents.
 
-## Comment note:
-In style.scss and in index.js there are some comments that explain to me what I should do (lol)
+## Link to the app
+Try the app [here](https://air-quality-index-eulaliapi.netlify.app/)!
