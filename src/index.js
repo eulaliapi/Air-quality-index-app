@@ -16,6 +16,5 @@ const initApp = () => {
     searchedCity.addEventListener('submit', getSearchedIndex);
 }
 
-
 //starts app
 document.addEventListener("DOMContentLoaded", initApp);

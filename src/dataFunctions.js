@@ -4,8 +4,8 @@ import { displayError, showSpinner, displayAQICard } from "./domFunctions.js";
 
 import { Pollution } from "./Pollution.js";
 
-//api key, I know it should be hidden but I still need to figure out how to make it work with gitignore and webpack
-const AQI_API = "6aa562f78c0631a2b538a949824cb0e3";
+//api key
+const aqiApi = process.env.AQI_API;
 
 let pollutionData = new Pollution();
 
@@ -44,7 +44,7 @@ export const getSearchedIndex = (e) => {
     showSpinner()
     
     //calls url: if res is ok it sends its data to getCoordsFromApi, else it displays the error
-    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${requestedCity}&limit=5&appid=${AQI_API}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${requestedCity}&limit=5&appid=${aqiApi}`;
     axios.get(url)
     .then( res => getCoordsFromApi(res.data))
     .catch(displayError)
@@ -81,7 +81,7 @@ const getAQI = (pollutionData) => {
     const lat = pollutionData.getLat();
     const lon = pollutionData.getLon();
 
-    const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${AQI_API}`;
+    const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${aqiApi}`;
 
     //gets the AQI Json or an error
     axios.get(url)

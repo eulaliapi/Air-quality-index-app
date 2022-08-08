@@ -2545,7 +2545,7 @@ __webpack_require__.r(__webpack_exports__);
 
  //api key, I know it should be hidden but I still need to figure out how to make it work with gitignore and webpack
 
-var AQI_API = "6aa562f78c0631a2b538a949824cb0e3";
+var aqiApi = "6aa562f78c0631a2b538a949824cb0e3";
 var pollutionData = new _Pollution_js__WEBPACK_IMPORTED_MODULE_2__.Pollution(); //starts geolocation
 
 var getGeoIndex = function getGeoIndex() {
@@ -2577,7 +2577,7 @@ var getSearchedIndex = function getSearchedIndex(e) {
   pollutionData.setName(requestedCity);
   (0,_domFunctions_js__WEBPACK_IMPORTED_MODULE_1__.showSpinner)(); //calls url: if res is ok it sends its data to getCoordsFromApi, else it displays the error
 
-  var url = "https://api.openweathermap.org/geo/1.0/direct?q=".concat(requestedCity, "&limit=5&appid=").concat(AQI_API);
+  var url = "https://api.openweathermap.org/geo/1.0/direct?q=".concat(requestedCity, "&limit=5&appid=").concat(aqiApi);
   axios__WEBPACK_IMPORTED_MODULE_0___default().get(url).then(function (res) {
     return getCoordsFromApi(res.data);
   })["catch"](_domFunctions_js__WEBPACK_IMPORTED_MODULE_1__.displayError);
@@ -2605,7 +2605,7 @@ var getAQI = function getAQI(pollutionData) {
   //gets pollution lat and lon and uses them in the api call
   var lat = pollutionData.getLat();
   var lon = pollutionData.getLon();
-  var url = "https://api.openweathermap.org/data/2.5/air_pollution?lat=".concat(lat, "&lon=").concat(lon, "&appid=").concat(AQI_API); //gets the AQI Json or an error
+  var url = "https://api.openweathermap.org/data/2.5/air_pollution?lat=".concat(lat, "&lon=").concat(lon, "&appid=").concat(aqiApi); //gets the AQI Json or an error
 
   axios__WEBPACK_IMPORTED_MODULE_0___default().get(url).then(function (res) {
     return getAQIData(res.data);
